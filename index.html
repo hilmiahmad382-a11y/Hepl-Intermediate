@@ -1,0 +1,398 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>English Help Expressions Quiz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins', sans-serif;
+    margin:0;
+    background: linear-gradient(135deg,#74ebd5,#9face6);
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+}
+
+h1{text-align:center;}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:5px 0 10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+/* QUESTION STYLE */
+.question{
+    background:#f8f9ff;
+    padding:15px;
+    margin-bottom:15px;
+    border-left:6px solid #6c63ff;
+    border-radius:10px;
+}
+
+/* CLICKABLE OPTIONS */
+.option{
+    display:block;
+    padding:10px;
+    margin:6px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.2s;
+    background:white;
+}
+
+.option:hover{
+    border-color:#6c63ff;
+    transform:scale(1.02);
+}
+
+.option.selected{
+    background:#6c63ff;
+    color:white;
+    border-color:#6c63ff;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#6c63ff;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* RESULT */
+.result{
+    margin-top:15px;
+    padding:15px;
+    background:#eaffea;
+    border-left:6px solid #2ecc71;
+    border-radius:10px;
+}
+
+/* POPUP */
+#popup{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+}
+
+.popup-content{
+    background:white;
+    padding:20px;
+    width:85%;
+    max-width:650px;
+    border-radius:12px;
+    max-height:80%;
+    overflow-y:auto;
+}
+
+.close-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    float:right;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌟 English Help Expressions Quiz</h1>
+
+<input id="name" placeholder="Name">
+<input id="class" placeholder="Class">
+
+<!-- QUESTIONS (UNCHANGED CONTENT) -->
+
+<div class="question">
+1. “Can you help me?” is an expression of ____.
+<div class="option" onclick="selectAnswer('q1','a',this)">A. greeting</div>
+<div class="option" onclick="selectAnswer('q1','b',this)">B. asking for help</div>
+<div class="option" onclick="selectAnswer('q1','c',this)">C. apologizing</div>
+<div class="option" onclick="selectAnswer('q1','d',this)">D. giving opinion</div>
+</div>
+
+<div class="question">
+2. Which expression offers help?
+<div class="option" onclick="selectAnswer('q2','a',this)">A. Let me help you</div>
+<div class="option" onclick="selectAnswer('q2','b',this)">B. I disagree</div>
+<div class="option" onclick="selectAnswer('q2','c',this)">C. Good night</div>
+<div class="option" onclick="selectAnswer('q2','d',this)">D. Turn left</div>
+</div>
+
+<div class="question">
+3. “Would you mind helping me?” is ____.
+<div class="option" onclick="selectAnswer('q3','a',this)">A. rude</div>
+<div class="option" onclick="selectAnswer('q3','b',this)">B. polite</div>
+<div class="option" onclick="selectAnswer('q3','c',this)">C. angry</div>
+<div class="option" onclick="selectAnswer('q3','d',this)">D. informal</div>
+</div>
+
+<div class="question">
+4. A: “My books are very heavy.” B: “____”
+<div class="option" onclick="selectAnswer('q4','a',this)">A. I’m sorry</div>
+<div class="option" onclick="selectAnswer('q4','b',this)">B. Let me carry them for you</div>
+<div class="option" onclick="selectAnswer('q4','c',this)">C. Goodbye</div>
+<div class="option" onclick="selectAnswer('q4','d',this)">D. I disagree</div>
+</div>
+
+<div class="question">
+5. Which sentence asks for help politely?
+<div class="option" onclick="selectAnswer('q5','a',this)">A. Help me now!</div>
+<div class="option" onclick="selectAnswer('q5','b',this)">B. Could you help me, please?</div>
+<div class="option" onclick="selectAnswer('q5','c',this)">C. Give me that!</div>
+<div class="option" onclick="selectAnswer('q5','d',this)">D. Be quiet!</div>
+</div>
+
+<div class="question">
+6. “Do you need any help?” means ____.
+<div class="option" onclick="selectAnswer('q6','a',this)">A. asking for opinion</div>
+<div class="option" onclick="selectAnswer('q6','b',this)">B. offering assistance</div>
+<div class="option" onclick="selectAnswer('q6','c',this)">C. apologizing</div>
+<div class="option" onclick="selectAnswer('q6','d',this)">D. greeting someone</div>
+</div>
+
+<div class="question">
+7. Which response accepts help?
+<div class="option" onclick="selectAnswer('q7','a',this)">A. No problem</div>
+<div class="option" onclick="selectAnswer('q7','b',this)">B. Yes, please</div>
+<div class="option" onclick="selectAnswer('q7','c',this)">C. I forgive you</div>
+<div class="option" onclick="selectAnswer('q7','d',this)">D. Turn right</div>
+</div>
+
+<div class="question">
+8. Which response refuses help politely?
+<div class="option" onclick="selectAnswer('q8','a',this)">A. Go away</div>
+<div class="option" onclick="selectAnswer('q8','b',this)">B. No, thank you</div>
+<div class="option" onclick="selectAnswer('q8','c',this)">C. Be quiet</div>
+<div class="option" onclick="selectAnswer('q8','d',this)">D. I disagree</div>
+</div>
+
+<div class="question">
+9. A helpful person usually ____.
+<div class="option" onclick="selectAnswer('q9','a',this)">A. ignores others</div>
+<div class="option" onclick="selectAnswer('q9','b',this)">B. offers assistance</div>
+<div class="option" onclick="selectAnswer('q9','c',this)">C. gets angry easily</div>
+<div class="option" onclick="selectAnswer('q9','d',this)">D. lies often</div>
+</div>
+
+<div class="question">
+10. Which expression is the most polite?
+<div class="option" onclick="selectAnswer('q10','a',this)">A. Help me!</div>
+<div class="option" onclick="selectAnswer('q10','b',this)">B. Could you please help me?</div>
+<div class="option" onclick="selectAnswer('q10','c',this)">C. Carry this!</div>
+<div class="option" onclick="selectAnswer('q10','d',this)">D. Move!</div>
+</div>
+
+<button onclick="submitQuiz()">Submit Quiz</button>
+
+<div class="result" id="result"></div>
+
+<h2>🏆 Leaderboard</h2>
+<table border="1" width="100%">
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Class</th>
+<th>Score</th>
+<th>Time</th>
+</tr>
+<tbody id="ranking"></tbody>
+</table>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup">
+<div class="popup-content">
+<button class="close-btn" onclick="closePopup()">X</button>
+<h2>📘 Explanations</h2>
+<div id="explanations"></div>
+</div>
+</div>
+
+<script>
+
+// ANSWERS
+const answers = {
+q1:"b", q2:"a", q3:"b", q4:"b", q5:"b",
+q6:"b", q7:"b", q8:"b", q9:"b", q10:"b"
+};
+
+// EXPLANATIONS
+const explanations = {
+q1:"Asking for help.",
+q2:"Offering help.",
+q3:"Polite expression.",
+q4:"Offering to carry books.",
+q5:"Polite request.",
+q6:"Offering assistance.",
+q7:"Accepting help.",
+q8:"Polite refusal.",
+q9:"Helpful people assist others.",
+q10:"Most polite form of request."
+};
+
+// SELECTED ANSWERS
+let selectedAnswers = {};
+
+function selectAnswer(q, ans, el){
+
+selectedAnswers[q] = ans;
+
+let options = el.parentNode.querySelectorAll(".option");
+options.forEach(o => o.classList.remove("selected"));
+
+el.classList.add("selected");
+}
+
+// SOUND
+const correctSound = new Audio("https://www.soundjay.com/buttons/sounds/button-4.mp3");
+const wrongSound = new Audio("https://www.soundjay.com/buttons/sounds/button-10.mp3");
+
+function submitQuiz(){
+
+let name = document.getElementById("name").value;
+let cls = document.getElementById("class").value;
+
+if (!name || !cls) {
+    alert("Please fill in your Name and Class before submitting!");
+    return;
+}
+
+let score = 0;
+let output = "";
+
+for(let i=1;i<=10;i++){
+
+if(selectedAnswers["q"+i] === answers["q"+i]){
+score++;
+correctSound.play();
+output += `<p>✔ Q${i}: Correct - ${explanations["q"+i]}</p>`;
+}else{
+wrongSound.play();
+output += `<p>❌ Q${i}: Wrong - ${explanations["q"+i]}</p>`;
+}
+}
+
+let time = new Date().toLocaleString();
+
+// SAVE RANKING LOKAL (agar tetap muncul di halaman)
+let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+ranking.push({name, class:cls, score, time});
+localStorage.setItem("ranking", JSON.stringify(ranking));
+
+loadRanking();
+
+// UPDATE TAMPILAN RESULT
+document.getElementById("result").innerHTML = `
+<h3>🎯 Result</h3>
+Name: ${name}<br>
+Class: ${cls}<br>
+Score: ${score}/10<br>
+Time: ${time}<br>
+<span id="save-status" style="color: #f39c12; font-weight: bold; margin-top:10px; display:inline-block;">🔄 Saving to Server/Excel...</span>
+`;
+
+showPopup(output);
+
+// SEND TO GOOGLE SHEETS API
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNy0INk-z1jDesKlPZhfWD-5H30Pd0BGPcgcXZ99vBcPbFByPt5x21YTyjnKvWpz4s/exec";
+
+let dataToSave = {
+    name: name,
+    class: cls,
+    score: score,
+    time: time
+};
+
+fetch(SCRIPT_URL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "text/plain" // text/plain digunakan agar tidak terkena pemblokiran CORS dari Google
+    },
+    body: JSON.stringify(dataToSave)
+})
+.then(response => response.json())
+.then(data => {
+    let statusEl = document.getElementById("save-status");
+    if(data.result === "success") {
+        statusEl.innerHTML = "✔️ Saved to Excel successfully!";
+        statusEl.style.color = "#2ecc71";
+    } else {
+        statusEl.innerHTML = "❌ Failed to save to Excel.";
+        statusEl.style.color = "red";
+    }
+})
+.catch(error => {
+    let statusEl = document.getElementById("save-status");
+    statusEl.innerHTML = "❌ Error connecting to server.";
+    statusEl.style.color = "red";
+    console.error("Fetch error:", error);
+});
+}
+
+// LEADERBOARD
+function loadRanking(){
+let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+ranking.sort((a,b)=>b.score - a.score);
+
+let table = document.getElementById("ranking");
+table.innerHTML = "";
+
+ranking.forEach((r,index)=>{
+
+let badge = "";
+if(index===0) badge="🥇 GOLD";
+else if(index===1) badge="🥈 SILVER";
+else if(index===2) badge="🥉 BRONZE";
+else badge="—";
+
+table.innerHTML += `
+<tr>
+<td>${badge}</td>
+<td>${r.name}</td>
+<td>${r.class}</td>
+<td>${r.score}</td>
+<td>${r.time}</td>
+</tr>`;
+});
+}
+
+function showPopup(html){
+document.getElementById("explanations").innerHTML = html;
+document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display = "none";
+}
+
+loadRanking();
+
+</script>
+
+</body>
+</html>
